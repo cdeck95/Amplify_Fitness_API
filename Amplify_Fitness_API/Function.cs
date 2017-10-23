@@ -16,12 +16,13 @@ namespace Amplify_Fitness_API
         /// <summary>
         /// A simple function that takes a string and does a ToUpper
         /// </summary>
-        /// <param name="input"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public string FunctionHandler(string input, ILambdaContext context)
+        public int FunctionHandler(ILambdaContext context)
         {
-            return input?.ToUpper();
+            Random rnd = new Random();
+            int month = rnd.Next(1, 13);  // month: >= 1 and < 13
+            return month;
         }
     }
 }
